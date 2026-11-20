@@ -1,0 +1,14 @@
+{
+  "name": "vitrine-modal",
+  "version": "1.0.0",
+  "description": "Vitrine: modals on the native dialog element: transitions, stacking, a phone sheet, the Back button, a scroll lock that doesn't move the page. No dependencies, no build step.",
+  "license": "GPL-3.0-or-later",
+  "author": "Ahmed Nefzaoui",
+  "homepage": "https://anefzaoui.github.io/vitrine-modal/",
+  "repository": { "type": "git", "url": "https://github.com/anefzaoui/vitrine-modal.git" },
+  "bugs": "https://github.com/anefzaoui/vitrine-modal/issues",
+  "browser": "vitrine-modal.js",
+  "files": ["vitrine-core.js", "vitrine-modal.js", "vitrine-modal.css", "LICENSE", "README.md"],
+  "scripts": { "test": "node test/e2e.mjs" },
+  "keywords": ["modal", "dialog", "accessibility", "rtl", "vanilla-js", "no-dependencies"]
+}

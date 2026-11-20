@@ -1,0 +1,30 @@
+# SPDX-License-Identifier: GPL-3.0-or-later
+# Every push and pull request: the dialog in real headless Chromium and Firefox (test/e2e.mjs),
+# and the shared core checked against anefzaoui/vitrine's.
+name: Test
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  e2e:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: 22
+      - name: Playwright and its browsers
+        run: |
+          npm install --no-save --no-package-lock playwright@1.64.1
+          npx playwright install --with-deps chromium-headless-shell firefox
+      - name: End-to-end, Chromium and Firefox
+        run: node test/e2e.mjs
+      - name: The shared core matches anefzaoui/vitrine's
+        run: node tools/check-core.mjs
