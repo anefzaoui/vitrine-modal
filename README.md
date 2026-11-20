@@ -54,7 +54,8 @@ commit or tag (no tags yet: use a commit SHA):
 
 To vendor it with a lock file and a check, use Vitrine's
 [`tools/vendor.mjs`](https://github.com/anefzaoui/vitrine/blob/main/tools/vendor.mjs) with
-`--modal=<ref>`.
+`--modal=<ref>`, and its [`tools/vitrine-check.mjs`](https://github.com/anefzaoui/vitrine/blob/main/tools/vitrine-check.mjs)
+in your build or tests.
 
 ## Use
 
